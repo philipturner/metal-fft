@@ -4,7 +4,7 @@
 
 ## How to use
 
-MetalFFT's API will be modeled after Metal Performance Shaders, but allow encoding commands into indirect command buffers as well. On initial release, it will only perform FFTs on tensors with dimensions that are powers of two. It will support performing multiple 1D and 2D FFTs simultaneously when tensors are arranged in contiguous blocks of memory
+MetalFFT's API will be modeled after Metal Performance Shaders, but allow encoding commands into indirect command buffers. On initial release, it will only perform FFTs on tensors with dimensions that are powers of two. It will support performing multiple 1D and 2D FFTs simultaneously when tensors are arranged in contiguous blocks of memory
 
 There will be an option to use either real or complex numbers as input. The output buffer will store both components of each complex number in an interleaved format to improve performance of memory accesses during the kernel's execution. Converting the output from complex to real will require executing a separate shader, as that is not an in-place operation.
 
