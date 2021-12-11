@@ -4,7 +4,7 @@
 
 ## How to use
 
-MetalFFT's API will be modeled after Metal Performance Shaders, but allow encoding commands into indirect command buffers. It will only perform FFTs on tensors whose dimensions are powers of two. It will support performing multiple 1D and 2D FFTs simultaneously when tensors are arranged in contiguous blocks of memory (the number of simultaneous transforms does not need to be a power of two).
+MetalFFT's API will be modeled after Metal Performance Shaders, but allow encoding commands into indirect command buffers. It will only perform FFTs on tensors whose dimensions are powers of two. It will support performing multiple 1D and 2D FFTs simultaneously when tensors are arranged in contiguous blocks of memory (the number of simultaneous transforms does not need to be a power of two). If you attempt to run an FFT shader on more than 2 billion numbers at once, the API will fail to execute and throw an error.
 
 There will be an option to use either real or interleaved complex numbers as input. The output buffer will store both components of each complex number in an interleaved format to optimize memory accesses during the transform's execution. Converting the output from complex to real will require executing a separate shader, as that is not an in-place operation. That shader will also allow for converting between interleaved and split complex tensors.
 
