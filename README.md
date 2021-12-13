@@ -10,6 +10,6 @@ There will be options to use either real, interleaved complex, or split complex 
 
 ## How it works
 
-The FFT shaders operate in-place on the output buffer, using bit reversal as a pre-processing step and the decimation-in-time (DIT) approach. The first stage of each transform is out of place and eliminates a separate copying pass, using bit reversal to index the input and then perform 2-wide discrete Fourier transforms (butterflies). The rest proceed as shown in the `iterative-fft` pseudocode on the Cooley-Tukey algorithm [wikipedia article](https://en.wikipedia.org/wiki/Cooley–Tukey_FFT_algorithm). All twiddle factors are cached into a `MTLBuffer` when the shader first loads from the disk.
+The FFT shaders operate in-place on the output buffer, using bit reversal as a pre-processing step and the decimation-in-time (DIT) approach. The first stage of each transform is out of place and eliminates one copying pass, using bit reversal to index the input and then perform 2-wide discrete Fourier transforms (butterflies). The rest proceed as shown in the `iterative-fft` pseudocode on the Cooley-Tukey algorithm [wikipedia article](https://en.wikipedia.org/wiki/Cooley–Tukey_FFT_algorithm). All twiddle factors are cached into a `MTLBuffer` when the shader first loads from the disk.
 
 The `iterative-fft` approach was chosen because it can be easily parallelized, unlike the recursive approaches often used on CPUs.
