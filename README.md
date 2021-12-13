@@ -1,6 +1,6 @@
 # MetalFFT
 
-1D, 2D, and 3D variations of Fast Fourier Transforms implemented for a Metal backend for Swift for TensorFlow. This is still in progress, but star or "watch" it to be alerted of its completion in the future. It will likely be kept separate from a MetalRT or [SwiftRT](https://github.com/ewconnell/swiftrt) implementation due to its domain-specific nature. For more context on the S4TF backend, see the [Differentiation iOS Demo](https://github.com/philipturner/differentiation-ios-demo).
+1D, 2D, and 3D variations of Fast Fourier Transforms implemented for a Metal backend for Swift for TensorFlow. This is still in progress, but star or "watch" it to be alerted of its completion in the future. It will likely be kept separate from an XLA or [SwiftRT](https://github.com/ewconnell/swiftrt) implementation due to its domain-specific nature. For more context on the S4TF backend, see the [Differentiation iOS Demo](https://github.com/philipturner/differentiation-ios-demo).
 
 ## How to use
 
