@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ARHeadsetUtil",
+        "repositoryURL": "https://github.com/philipturner/ARHeadsetUtil",
+        "state": {
+          "branch": "main",
+          "revision": "93e21f78ec085625419dd796c2af2640652b36c6",
+          "version": null
+        }
+      },
+      {
+        "package": "MTLLayeredBufferModule",
+        "repositoryURL": "https://github.com/philipturner/MTLLayeredBuffer",
+        "state": {
+          "branch": "main",
+          "revision": "e8e598f45383f7aaf1209cb397064ee231354108",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
