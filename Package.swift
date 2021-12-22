@@ -26,9 +26,6 @@ let package = Package(
                 .process("Other/Shaders/FFTBody.metal"),
                 .process("Other/Shaders/FFTConvert.metal"),
                 .process("Other/Shaders/FFTIntro.metal"),
-            ],
-            swiftSettings: [
-                .unsafeFlags(["-enable-testing"]),
             ]),
         .testTarget(
             name: "MetalFFTTests",
