@@ -1,6 +1,8 @@
-# MetalFFT
+# MetalFFT (In Archive Mode)
 
-MetalFFT is an experiment in adding GPU acceleration for 1D, 2D, and 3D variations of Fast Fourier Transforms. 
+MetalFFT was an experiment in next-generation GPU acceleration for 1D, 2D, and 3D variations of Fast Fourier Transforms. 
+
+> Note: The above statement is a parody of Swift for TensorFlow's [death](https://www.tensorflow.org/swift/guide/overview) acquired by slightly rewording it. MetalFFT isn't really in archive mode, and I'll still accept pull requests.
 
 This framework's original purpose was to become a raw operator for a [Swift for TensorFlow](https://github.com/tensorflow/swift) Metal backend. Work on it paused due to unfavorable performance. For many transforms, Apple's CPU alternative from Accelerate runs faster. The A13 and later have AMX accelerators capable of ~2 TFLOPS, and the CPU implementation may harness that processing power.
 
