@@ -35,7 +35,7 @@ extension MetalFFTTests {
     // 128 * 128 * 2048 * MemoryLayout<simd_float2>.stride = 256 MB > 64 MB
     
     // Run this test several times, activating or deactivating certain thread dispatch/blit copy commands
-    // in FastFourierTransform.encode(commandBuffer:input:output)` - located in "Sources/Resources/
+    // in `FastFourierTransform.encode(commandBuffer:input:output)` - located in "Sources/Resources/
     // Transforms/TransformEncoding". Also force the stage loop (at the end of the function) to only
     // execute the first stage (instead of #dimensions), then single out certain commands. With only one
     // command (e.g. intro, body, blit) active, then run both iterations of the stage loop and subtract
