@@ -89,11 +89,11 @@ Hopefully, someone in the open source community or Apple's Metal Performance Sha
 I will move on to resurrecting [Swift for TensorFlow](https://github.com/tensorflow/swift) now. Pull requests to this repository are welcome, and I can test them on a wide range of GPUs to profile performance. If anyone contributes DocC documentation, I will host it on a GitHub Pages website under my account.
 
 > Note: Although I can test on GPUs from Intel and AMD, that has not been done yet. I ran the Swift package tests several times on an M1 Max, and ran one test on an A15. There may be bugs on older Apple GPUs and Intel Macs.
-
+<!--
 This project is open-sourced under the MIT license, with one exception. Before this code or anything derived from it is used in MPS, MPS Graph or ML Compute, the Apple MPS team must contact me about it. They may use email, developer forums, or any other communication channel. 
 
 In addition, I ask the MPS team to experiment with encoding some MPS kernels into indirect command buffers, using this project as a reference. There is ample time to add FFTs and ICB support to MPS, then announce the features during WWDC 2022.
-
+-->
 ## Acknowledgments
 
 Special thanks to [@CaptainHarlockSSX](https://github.com/CaptainHarlockSSX) for contributing CPU performance benchmarks and assisting me throughout this project.
