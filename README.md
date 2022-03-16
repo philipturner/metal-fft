@@ -1,6 +1,6 @@
 # MetalFFT (In Archive Mode)
 
-MetalFFT was an experiment in next-generation GPU acceleration for 1D, 2D, and 3D variations of Fast Fourier Transforms. 
+MetalFFT was an experiment in the next-generation GPU acceleration for 1D, 2D, and 3D variations of Fast Fourier Transforms. 
 
 > Note: The above statement is a parody of Swift for TensorFlow's [death](https://www.tensorflow.org/swift/guide/overview), but it is serious. I recommend that you try [VkFFT](https://github.com/DTolm/VkFFT) for hardware-accelerated FFTs, which uses OpenCL on macOS.
 
