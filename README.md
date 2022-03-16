@@ -2,11 +2,9 @@
 
 MetalFFT was an experiment in next-generation GPU acceleration for 1D, 2D, and 3D variations of Fast Fourier Transforms. 
 
-> Note: The above statement is a parody of Swift for TensorFlow's [death](https://www.tensorflow.org/swift/guide/overview) acquired by slightly rewording it. MetalFFT isn't really in archive mode and I'll still accept pull requests.
+> Note: The above statement is a parody of Swift for TensorFlow's [death](https://www.tensorflow.org/swift/guide/overview), but it is serious. I recommend that you try [VkFFT](https://github.com/DTolm/VkFFT) for hardware-accelerated FFTs, which uses OpenCL on macOS.
 
-This framework's original purpose was to become a raw operator for a [Swift for TensorFlow](https://github.com/tensorflow/swift) Metal backend. Work on it paused due to unfavorable performance. For many transforms, Apple's CPU alternative from Accelerate runs faster. The A13 and later have AMX accelerators capable of ~2 TFLOPS, and the CPU implementation may harness that processing power.
-
-MetalFFT was also created to show Apple's Metal Performance Shaders (MPS) team how to support encoding MPS kernels into indirect command buffers. Due to the lack of a direct connection to machine learning, this will not be merged into a larger repository when constructing an S4TF Metal backend. For more context on the backend, see the [Differentiation iOS Demo](https://github.com/philipturner/differentiation-ios-demo).
+This framework's original purpose was to become an operator for a larger GPGPU framework. Work on it paused due to unfavorable performance. For many transforms, Apple's CPU alternative from Accelerate runs faster. The A13 and later have AMX accelerators capable of ~2 TFLOPS, and the CPU implementation may harness that processing power.
 
 ## How to use
 
@@ -82,18 +80,6 @@ The 2D and 3D variations repeat the steps above, once for each dimension. Betwee
 
 The `iterative-fft` approach was selected because it can be easily parallelized, unlike the recursive approach often used on CPUs. This could be improved with a mixed-radix algorithm, executing 4-wide or 8-wide butterflies inside the shader. That approach reduces the number of memory accesses while retaining the same number of floating-point operations. However, it slightly complicates command encoding on the CPU.
 
-## Future work
-
-Hopefully, someone in the open source community or Apple's Metal Performance Shaders (MPS) team will pick up where I left off. MetalFFT still requires several optimizations, including mixed radices and automatically splitting large batches into smaller ones ([to improve cache coherence](Tests/MetalFFTTests/Profiling/ProfilingHarlock2D.swift)). It also lacks DocC documentation.
-
-I will move on to resurrecting [Swift for TensorFlow](https://github.com/tensorflow/swift) now. Pull requests to this repository are welcome, and I can test them on a wide range of GPUs to profile performance. If anyone contributes DocC documentation, I will host it on a GitHub Pages website under my account.
-
-> Note: Although I can test on GPUs from Intel and AMD, that has not been done yet. I ran the Swift package tests several times on an M1 Max, and ran one test on an A15. There may be bugs on older Apple GPUs and Intel Macs.
-<!--
-This project is open-sourced under the MIT license, with one exception. Before this code or anything derived from it is used in MPS, MPS Graph or ML Compute, the Apple MPS team must contact me about it. They may use email, developer forums, or any other communication channel. 
-
-In addition, I ask the MPS team to experiment with encoding some MPS kernels into indirect command buffers, using this project as a reference. There is ample time to add FFTs and ICB support to MPS, then announce the features during WWDC 2022.
--->
 ## Acknowledgments
 
 Special thanks to [@CaptainHarlockSSX](https://github.com/CaptainHarlockSSX) for contributing CPU performance benchmarks and assisting me throughout this project.
